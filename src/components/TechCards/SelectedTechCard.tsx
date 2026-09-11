@@ -1,10 +1,8 @@
-import type { Dispatch, SetStateAction } from "react";
 import type { ItechnologieDataType } from "../../Types/technologieData";
 
 interface SelectedCardProps {
     cardInfo: ItechnologieDataType;
     selectedCard: ItechnologieDataType;
-    setSelectedCard: Dispatch<SetStateAction<ItechnologieDataType[]>>
     handleRemoveButton: (yourStuckCard:ItechnologieDataType) => void
 }
 

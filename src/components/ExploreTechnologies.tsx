@@ -6,15 +6,14 @@ import { Slide, toast } from "react-toastify";
 
 interface ExploreTechnologiesProps {
     technologieData: Promise<ItechnologieDataType[]>
-    selectedCard: ItechnologieDataType[];
 }
 
 const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
     const resData = use(technologieData);
-    const [selectedCard, setSelectedCard] = useState([]);
+    const [selectedCard, setSelectedCard] = useState<ItechnologieDataType[]>([]);
 
     const handleRemoveButton = (yourStuckCard: ItechnologieDataType) => {
-        const newSelectedCard = selectedCard.filter(card => card.id !== yourStuckCard.id);
+        const newSelectedCard = selectedCard.filter((card: ItechnologieDataType) => card.id !== yourStuckCard.id);
         setSelectedCard(newSelectedCard);
     }
     const handleRemoveAllButton = () => {
