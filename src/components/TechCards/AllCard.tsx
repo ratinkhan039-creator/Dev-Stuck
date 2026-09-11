@@ -11,19 +11,34 @@ interface AllCardProps {
 }
 export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProps) {
     const handleAddStuckButton = (addCardInfo: ItechnologieDataType) => {
-        const newCard = [...selectedCard, addCardInfo];
-        setSelectedCard(newCard);
-        toast.success(`${addCardInfo.name} added to your stuck`, {
-            position: "bottom-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Slide,
-        });
+        if (selectedCard.includes(addCardInfo)) {
+            toast.error('This technology is already in your stack!', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            });
+        } else {
+            const newCard = [...selectedCard, addCardInfo];
+            setSelectedCard(newCard);
+            toast.success(`${addCardInfo.name} added to your stuck`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Slide,
+            });
+        }
+
     }
     return (
         <>
@@ -55,10 +70,8 @@ export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProp
                         </span>
                     </div>
                 </div>
-
                 {/* Button */}
-
-                <button className={`w-full py-3 rounded-xl  bg-red-100 hover:bg-red-50 transition ${!selectedCard.includes(cardInfo) && "rounded-xl bg-gradient-to-r from-orange-400 to-pink-500 text-white font-medium rounded-xl hover:opacity-90 border"}`} onClick={() => { handleAddStuckButton(cardInfo) }} disabled={selectedCard.includes(cardInfo)}>
+                <button className={`w-full py-3 rounded-xl  bg-red-100 hover:bg-red-50 transition ${!selectedCard.includes(cardInfo) && "rounded-xl bg-gradient-to-r from-orange-400 to-pink-500 text-white font-medium rounded-xl hover:opacity-90 border"}`} onClick={() => { handleAddStuckButton(cardInfo) }}>
                     {selectedCard.includes(cardInfo) ? <span className="flex w-full justify-center items-center gap-2 font-medium text-red-500"><IoMdCheckmark /> Added to Stuck</span> : "Add to Stuck"}
                 </button>
             </div>

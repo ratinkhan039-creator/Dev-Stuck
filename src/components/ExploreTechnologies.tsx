@@ -15,6 +15,17 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
     const handleRemoveButton = (yourStuckCard: ItechnologieDataType) => {
         const newSelectedCard = selectedCard.filter((card: ItechnologieDataType) => card.id !== yourStuckCard.id);
         setSelectedCard(newSelectedCard);
+        toast.success(`${yourStuckCard.name} removed from your stack!`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Slide,
+        });
     }
     const handleRemoveAllButton = () => {
         const newSelectedCard: [] = [];
