@@ -1,7 +1,6 @@
 import type { ItechnologieDataType } from "../../Types/technologieData";
 
 interface SelectedCardProps {
-    cardInfo: ItechnologieDataType;
     selectedCard: ItechnologieDataType;
     handleRemoveButton: (yourStuckCard:ItechnologieDataType) => void
 }
