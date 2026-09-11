@@ -1,75 +1,35 @@
-# React + TypeScript + Vite
+THE DEV STUCK
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Description:
+The Dev Stuk application for devlopers helper. This application can you saved tecnology list.Your learning technologies and this tecnologies any time add or remove for your stuck. Or this is a very helpfull app.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This application create using:
+1: React
+2: TypeScript
+3: javaScript+(ES6)
+4: Tailwind css
+5: HTML
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Our application features:
+1: All technologies here and listing for your approch
+2: Added technologies 1 by 1 removeal
+3: Added technologies all removeal
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+What is JSX, and why is it used in React?
+Ans: JSX is java script xml. This is similer from HTML. React uses JSX bequse jsx wrait ui and reuseble
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+What is the difference between props and state?
+Ans: Props is data shearing for perent conponet to child component . State is a react hook and his stored a data.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+What does the useState hook do, and where did you use it in this project?
+Ans: useState is a react hook and his stored a data. ExploreTechnologies, AllCard and SelectedCard components using useState.
 
-```
+What does the useEffect hook do, and why did you need it to load the JSON data?
+Ans: The useEffect using for react component control side effect.loading JSON data using asyncronus operetion. Becose We fetch the data every time the component renders.
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Why does every item in a .map() list need a unique key prop?
+Ans: Bucose a singel item data or anathar singal item data mach thear using key prop 
