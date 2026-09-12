@@ -12,7 +12,7 @@ interface AllCardProps {
 export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProps) {
     const handleAddStuckButton = (addCardInfo: ItechnologieDataType) => {
         if (selectedCard.includes(addCardInfo)) {
-            toast.error('This technology is already in your stack!', {
+            toast.warning('This technology is already in your stack!', {
                 position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,

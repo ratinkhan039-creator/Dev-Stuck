@@ -55,7 +55,7 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
                 <div className="grid lg:grid-cols-[2fr_1fr] md:grid-cols-[1.5fr_1.5fr] sm:grid-cols-1 gap-9">
                     <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-5">
                         {
-                            resData.map(cardInfo => <AllCard cardInfo={cardInfo} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />)
+                            resData.map(cardInfo => <AllCard key={cardInfo.id} cardInfo={cardInfo} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />)
                         }
                     </div>
                     {/*Selected */}
@@ -73,7 +73,7 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
 
                             {selectedCard.length === 0 ? <div className=" border border-dashed border-gray-400 w-full h-25 rounded-2xl flex items-center justify-center"><p className="text-gray-400">Your stuck is empty</p></div> : <div><div className="flex flex-col gap-3 my-5">
                                 {
-                                    selectedCard.map(card => <SelectedTechCard selectedCard={card} handleRemoveButton={handleRemoveButton} />)
+                                    selectedCard.map(card => <SelectedTechCard key={card.id} selectedCard={card} handleRemoveButton={handleRemoveButton} />)
                                 }
                             </div>
                                 {/* Remove All Button */}
