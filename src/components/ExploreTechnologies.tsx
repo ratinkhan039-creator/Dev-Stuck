@@ -1,8 +1,9 @@
 import { use, useState } from "react";
 import type { ItechnologieDataType } from "../Types/technologieData";
 import SelectedTechCard from "./TechCards/SelectedTechCard";
-import { AllCard } from "./TechCards/AllCard";
 import { Slide, toast } from "react-toastify";
+import AllTechCard from "./TechCards/AllTechCard";
+
 
 interface ExploreTechnologiesProps {
     technologieData: Promise<ItechnologieDataType[]>
@@ -27,6 +28,7 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
             transition: Slide,
         });
     }
+
     const handleRemoveAllButton = () => {
         const newSelectedCard: [] = [];
         setSelectedCard(newSelectedCard);
@@ -42,6 +44,7 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
             transition: Slide,
         });
     }
+
     return (
         <section className="bg-gray-50 py-16">
             <div className="container mx-auto md:px-6 px-4">
@@ -55,7 +58,7 @@ const ExploreTechnologies = ({ technologieData }: ExploreTechnologiesProps) => {
                 <div className="grid lg:grid-cols-[2fr_1fr] md:grid-cols-[1.5fr_1.5fr] sm:grid-cols-1 gap-9">
                     <div className="grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-5">
                         {
-                            resData.map(cardInfo => <AllCard key={cardInfo.id} cardInfo={cardInfo} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />)
+                            resData.map(cardInfo => <AllTechCard key={cardInfo.id} cardInfo={cardInfo} selectedCard={selectedCard} setSelectedCard={setSelectedCard} />)
                         }
                     </div>
                     {/*Selected */}

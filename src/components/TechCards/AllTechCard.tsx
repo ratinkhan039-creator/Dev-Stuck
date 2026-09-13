@@ -9,7 +9,7 @@ interface AllCardProps {
     selectedCard: ItechnologieDataType[];
     setSelectedCard: Dispatch<SetStateAction<ItechnologieDataType[]>>
 }
-export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProps) {
+function AllTechCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProps) {
     const handleAddStuckButton = (addCardInfo: ItechnologieDataType) => {
         if (selectedCard.includes(addCardInfo)) {
             toast.warning('This technology is already in your stack!', {
@@ -50,7 +50,7 @@ export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProp
                             {/* Icon */}
                             <img src={cardInfo.icon} alt="" />
                         </div>
-                        <span className="bg-sky-50 text-sky-600 text-xs font-semibold px-3 py-1 rounded-full">
+                        <span className="bg-pink-50 text-pink-600 text-xs font-semibold px-3 py-1 rounded-full">
                             {cardInfo.badge}
                         </span>
                     </div>
@@ -78,3 +78,4 @@ export function AllCard({ cardInfo, selectedCard, setSelectedCard }: AllCardProp
         </>
     )
 }
+export default AllTechCard

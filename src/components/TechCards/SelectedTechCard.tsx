@@ -9,7 +9,7 @@ const SelectedTechCard = ({ selectedCard,handleRemoveButton }: SelectedCardProps
     
     return (
         <>
-        <div className="flex items-center md:px-3 px-0 justify-between h-15 border border-white hover:border rounded-2xl hover:border-gray-400">
+        <div className="flex items-center sm:px-3 px-2 justify-between h-15 border border-white hover:border rounded-2xl hover:border-gray-400">
                 <div className="flex gap-3">
                     <img src={selectedCard.icon} alt="" className="w-10 h-10" />
                     <div>
